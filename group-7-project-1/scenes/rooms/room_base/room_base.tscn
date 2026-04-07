@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://dd6j8dbvlgdsk"]
 
+[ext_resource type="Script" uid="uid://c6m1rxl17dxtf" path="res://scenes/rooms/room_base/room_base.gd" id="1_b47m5"]
 [ext_resource type="Script" uid="uid://dqqwfx316m74s" path="res://scenes/rooms/room_base/spawning_entities.gd" id="1_wl0tb"]
 
 [node name="Room_Base" type="Node2D" unique_id=1332939520]
+script = ExtResource("1_b47m5")
 
 [node name="Enviroment" type="TileMapLayer" parent="." unique_id=2032623033]
 
 [node name="Entities" type="TileMapLayer" parent="." unique_id=1978070456]
 script = ExtResource("1_wl0tb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=359260761]
