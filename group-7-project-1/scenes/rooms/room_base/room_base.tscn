@@ -6,7 +6,7 @@
 [node name="Room_Base" type="Node2D" unique_id=1332939520]
 script = ExtResource("1_b47m5")
 
-[node name="Enviroment" type="TileMapLayer" parent="." unique_id=2032623033]
+[node name="Environment" type="TileMapLayer" parent="." unique_id=2032623033]
 
 [node name="Entities" type="TileMapLayer" parent="." unique_id=1978070456]
 script = ExtResource("1_wl0tb")

@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bkmq73h0x2hix"]
+
+[node name="small_ghost" type="RigidBody2D" unique_id=1094495131]
