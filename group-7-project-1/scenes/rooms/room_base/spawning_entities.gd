@@ -4,10 +4,10 @@ var TREE : SceneTree = get_tree();
 
 # This ready function should spawn in each entity by type
 # Options are...
-	# Small Ghost
-	# Large Ghost
-	# Key
-	# Resident
+	# small (Small Ghost)
+	# large (Large Ghost)
+	# key
+	# npc (Resident)
 func _ready() -> void:
 	pass # Replace with function body.
 
