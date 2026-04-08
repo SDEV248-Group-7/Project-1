@@ -1,5 +1,7 @@
 extends TileMapLayer
 
+## Top Main Tree
+@onready var MAIN : Tree = get_parent().get_parent();
 ## Current Room Tree
 @onready var ROOM : Tree = get_parent();
 
@@ -18,18 +20,34 @@ extends TileMapLayer
 func _ready() -> void:
 	var entity_cells : Array[Vector2i] = get_used_cells();
 	var entity : Tree;
+	var small_ghost_num : int = 1;
+	var large_ghost_num : int = 1;
 	
 	for cell : Vector2i in entity_cells:
 		var data : TileData = get_cell_tile_data(cell);
 		var type : String = data.get_custom_data("type");
 		
 		match type:
-			"small" : entity = small_ghost_scene.instantiate();
-			"large" : entity = large_ghost_scene.instantiate();
-			"key" : entity = key_scene.instantiate();
-			"npc" : entity = npc_scene.instantiate();
+			"small" :
+				if (small_ghost_num > MAIN.num_of_dead_sm) :
+					entity = small_ghost_scene.instantiate();
+					ROOM.add_child(entity);
+					entity.position = map_to_local(cell);
+					entity.ghost_died.connect(MAIN.ghost_killed);
+			"large" : 
+				if (large_ghost_num > MAIN.num_of_dead_lg) :
+					entity = large_ghost_scene.instantiate();
+					ROOM.add_child(entity);
+					entity.position = map_to_local(cell);
+					entity.ghost_died.connect(MAIN.ghost_killed);
+			"key" : 
+				entity = key_scene.instantiate();
+				ROOM.add_child(entity);
+				entity.position = map_to_local(cell);
+			"npc" : 
+				entity = npc_scene.instantiate();
+				ROOM.add_child(entity);
+				entity.position = map_to_local(cell);
 		
-		ROOM.add_child(entity);
-		entity.position = map_to_local(cell);
 	#Endfor
 #End _ready()
