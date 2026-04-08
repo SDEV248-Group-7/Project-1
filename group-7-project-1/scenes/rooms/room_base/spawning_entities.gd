@@ -1,5 +1,8 @@
 extends TileMapLayer
 
+## Current Room Tree
+@onready var ROOM : Tree = get_parent();
+
 # Prepared scenes for spawning
 @onready var small_ghost_scene : PackedScene = load("res://scenes/entities/small/small_ghost.tscn");
 @onready var large_ghost_scene : PackedScene = load("res://scenes/entities/large/large_ghost.tscn");
@@ -26,7 +29,7 @@ func _ready() -> void:
 			"key" : entity = key_scene.instantiate();
 			"npc" : entity = npc_scene.instantiate();
 		
-		add_child(entity);
+		ROOM.add_child(entity);
 		entity.position = map_to_local(cell);
 	#Endfor
 #End _ready()

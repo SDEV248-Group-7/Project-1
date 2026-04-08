@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://c6m1rxl17dxtf" path="res://scenes/rooms/room_base/room_base.gd" id="1_b47m5"]
 [ext_resource type="Script" uid="uid://dqqwfx316m74s" path="res://scenes/rooms/room_base/spawning_entities.gd" id="1_wl0tb"]
 [ext_resource type="TileSet" uid="uid://dgxcw8ccvnpqd" path="res://assets/tilesets/Environment.tres" id="2_o0nsm"]
+[ext_resource type="Script" uid="uid://bq0kbnywujaa0" path="res://scenes/rooms/room_base/door_spawning.gd" id="3_qaw2j"]
 
 [node name="Room_Base" type="Node2D" unique_id=1332939520]
 script = ExtResource("1_b47m5")
 
 [node name="Environment" type="TileMapLayer" parent="." unique_id=2032623033]
 tile_set = ExtResource("2_o0nsm")
+script = ExtResource("3_qaw2j")
 
 [node name="Entities" type="TileMapLayer" parent="." unique_id=1978070456]
 script = ExtResource("1_wl0tb")
