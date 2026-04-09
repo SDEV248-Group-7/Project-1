@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://h0ufqxfv75qg"]
+[gd_scene load_steps=2 format=3 uid="uid://h0ufqxfv75qg"]
 
 [ext_resource type="Script" uid="uid://dbjnlgcl65mwe" path="res://scenes/entities/npc/npc.gd" id="1_av8t8"]
 
-[node name="NPC" type="StaticBody2D" unique_id=914785087]
+[node name="NPC" type="StaticBody2D"]
 script = ExtResource("1_av8t8")

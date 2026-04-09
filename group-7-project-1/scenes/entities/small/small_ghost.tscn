@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bkmq73h0x2hix"]
+[gd_scene load_steps=2 format=3 uid="uid://bkmq73h0x2hix"]
 
 [ext_resource type="Script" uid="uid://cfg8q4epmf2ol" path="res://scenes/entities/small/small_ghost.gd" id="1_qsuqt"]
 
-[node name="small_ghost" type="RigidBody2D" unique_id=1094495131]
+[node name="small_ghost" type="RigidBody2D"]
 script = ExtResource("1_qsuqt")

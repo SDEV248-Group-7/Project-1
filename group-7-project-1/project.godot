@@ -15,8 +15,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Group 7 Project 1"
-config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+run/main_scene="uid://chsvctns2ljxv"
+config/features=PackedStringArray("4.4", "Forward Plus")
 
 [input]
 
