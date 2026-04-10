@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://5keipa3v0ovm"]
+
+[ext_resource type="Script" uid="uid://d0xic2mul34oy" path="res://scenes/UI/menu.gd" id="1_rj1u7"]
+[ext_resource type="Texture2D" uid="uid://df2jtbmwbmtey" path="res://assets/Buttons/Start/Start_base.png" id="2_6tsa7"]
+[ext_resource type="LabelSettings" uid="uid://dnrnthhennbjp" path="res://assets/Fonts/Titles.tres" id="2_6u5o2"]
+[ext_resource type="Texture2D" uid="uid://dolgl14jojwcs" path="res://assets/Buttons/Start/Start_Hover.png" id="3_6u5o2"]
+[ext_resource type="Texture2D" uid="uid://dryo3if5wuf2o" path="res://assets/Buttons/Credits/Credits_Base.png" id="4_6pwqh"]
+[ext_resource type="Texture2D" uid="uid://bab6c4lgs7jva" path="res://assets/Buttons/Credits/Credits_Hover.png" id="5_l2dba"]
+[ext_resource type="Texture2D" uid="uid://bva2kni7egm1b" path="res://assets/Buttons/Quit/Quit_Base.png" id="6_qlyo0"]
+[ext_resource type="Texture2D" uid="uid://b68hdbnbpavmk" path="res://assets/Buttons/Quit/Quit_Hover.png" id="7_y1mkv"]
+
+[node name="Menu" type="Control" unique_id=1080340062]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rj1u7")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1700548171]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="." unique_id=544098970]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 50.0
+offset_right = 20.0
+offset_bottom = 73.0
+grow_horizontal = 2
+text = "A Scare On Maple Street"
+label_settings = ExtResource("2_6u5o2")
+
+[node name="Start" type="TextureButton" parent="." unique_id=1577725231]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -74.0
+offset_right = 64.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_6tsa7")
+texture_hover = ExtResource("3_6u5o2")
+
+[node name="Credits" type="TextureButton" parent="." unique_id=662726043]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 26.0
+offset_right = 64.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_6pwqh")
+texture_hover = ExtResource("5_l2dba")
+
+[node name="Quit" type="TextureButton" parent="." unique_id=611292638]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 126.0
+offset_right = 64.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_qlyo0")
+texture_hover = ExtResource("7_y1mkv")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

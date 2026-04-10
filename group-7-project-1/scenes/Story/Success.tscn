@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dv3df4brmunil"]
+
+[ext_resource type="Script" uid="uid://2txnppc31nk1" path="res://scenes/Story/success.gd" id="1_rwo7g"]
+[ext_resource type="LabelSettings" uid="uid://dnrnthhennbjp" path="res://assets/Fonts/Titles.tres" id="2_obr4o"]
+[ext_resource type="LabelSettings" uid="uid://bgvad6ouqbl" path="res://assets/Fonts/Body_Text.tres" id="3_0wy31"]
+[ext_resource type="Texture2D" uid="uid://cdoku7gpa245h" path="res://assets/Buttons/Retry/Retry_Base.png" id="4_pw7s7"]
+[ext_resource type="Texture2D" uid="uid://w6235j7bjss7" path="res://assets/Buttons/Retry/Retry_Hover.png" id="5_s4kgc"]
+[ext_resource type="Texture2D" uid="uid://kdtpcbtsocka" path="res://assets/Buttons/Back/Back_Base.png" id="6_qsqkh"]
+[ext_resource type="Texture2D" uid="uid://b3v83xcymj4ea" path="res://assets/Buttons/Back/Back_Hover.png" id="7_8v8ci"]
+
+[node name="Success" type="Control" unique_id=1529375722]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rwo7g")
+
+[node name="Background" type="TextureRect" parent="." unique_id=786847246]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="." unique_id=629308445]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 50.0
+offset_right = 20.0
+offset_bottom = 73.0
+grow_horizontal = 2
+text = "Success!!!"
+label_settings = ExtResource("2_obr4o")
+
+[node name="Story_Text" type="Label" parent="." unique_id=794222622]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "\"Officer reporting back, we are all good here.\" 
+\"The civilian has been freed from their home.\""
+label_settings = ExtResource("3_0wy31")
+
+[node name="Retry" type="TextureButton" parent="." unique_id=709797871]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = -98.0
+offset_right = -148.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_pw7s7")
+texture_hover = ExtResource("5_s4kgc")
+
+[node name="Back" type="TextureButton" parent="." unique_id=2022725291]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 174.0
+offset_top = -98.0
+offset_right = 302.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("6_qsqkh")
+texture_hover = ExtResource("7_8v8ci")
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://ugs0bju8wv2a"]
+
+[ext_resource type="Script" uid="uid://decbnpkydj5ho" path="res://scenes/Story/game_over.gd" id="1_1e4bw"]
+[ext_resource type="LabelSettings" uid="uid://dnrnthhennbjp" path="res://assets/Fonts/Titles.tres" id="2_3sx8n"]
+[ext_resource type="Texture2D" uid="uid://cdoku7gpa245h" path="res://assets/Buttons/Retry/Retry_Base.png" id="2_t4g57"]
+[ext_resource type="LabelSettings" uid="uid://bgvad6ouqbl" path="res://assets/Fonts/Body_Text.tres" id="3_3hy41"]
+[ext_resource type="Texture2D" uid="uid://w6235j7bjss7" path="res://assets/Buttons/Retry/Retry_Hover.png" id="3_3sx8n"]
+[ext_resource type="Texture2D" uid="uid://kdtpcbtsocka" path="res://assets/Buttons/Back/Back_Base.png" id="4_3hy41"]
+[ext_resource type="Texture2D" uid="uid://b3v83xcymj4ea" path="res://assets/Buttons/Back/Back_Hover.png" id="5_jxkcg"]
+
+[node name="Game_Over" type="Control" unique_id=950488763]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1e4bw")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2045951261]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="." unique_id=2103409025]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 50.0
+offset_right = 20.0
+offset_bottom = 73.0
+grow_horizontal = 2
+text = "Game Over"
+label_settings = ExtResource("2_3sx8n")
+
+[node name="Story_Text" type="Label" parent="." unique_id=2008095513]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "\"Officer Down, I repeat, Officer Down!!!\""
+label_settings = ExtResource("3_3hy41")
+
+[node name="Retry" type="TextureButton" parent="." unique_id=1935852532]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = -98.0
+offset_right = -148.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("2_t4g57")
+texture_hover = ExtResource("3_3sx8n")
+
+[node name="Back" type="TextureButton" parent="." unique_id=892375361]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 174.0
+offset_top = -98.0
+offset_right = 302.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_3hy41")
+texture_hover = ExtResource("5_jxkcg")
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
