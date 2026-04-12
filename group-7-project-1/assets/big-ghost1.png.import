@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bab6c4lgs7jva"
-path="res://.godot/imported/Credits_Hover.png-2bbdeaa1cee5cc12b6bc4b05e8d13126.ctex"
+uid="uid://cnetaupmfneqp"
+path="res://.godot/imported/big-ghost1.png-7fe5413f72fb7325016220745610ae9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Buttons/Credits/Credits_Hover.png"
-dest_files=["res://.godot/imported/Credits_Hover.png-2bbdeaa1cee5cc12b6bc4b05e8d13126.ctex"]
+source_file="res://assets/big-ghost1.png"
+dest_files=["res://.godot/imported/big-ghost1.png-7fe5413f72fb7325016220745610ae9a.ctex"]
 
 [params]
 

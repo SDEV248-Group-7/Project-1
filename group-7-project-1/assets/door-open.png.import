@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bab6c4lgs7jva"
-path="res://.godot/imported/Credits_Hover.png-2bbdeaa1cee5cc12b6bc4b05e8d13126.ctex"
+uid="uid://dsikdq8xa6pyp"
+path="res://.godot/imported/door-open.png-a1265cb30e605197e4c6e8d16276a56c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Buttons/Credits/Credits_Hover.png"
-dest_files=["res://.godot/imported/Credits_Hover.png-2bbdeaa1cee5cc12b6bc4b05e8d13126.ctex"]
+source_file="res://assets/door-open.png"
+dest_files=["res://.godot/imported/door-open.png-a1265cb30e605197e4c6e8d16276a56c.ctex"]
 
 [params]
 
