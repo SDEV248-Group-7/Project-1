@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://vqktikinltwm"]
+
+[ext_resource type="Script" uid="uid://c6uag8tc8rws7" path="res://scenes/player/weapon.gd" id="1_6rka0"]
+[ext_resource type="Texture2D" uid="uid://uvvmo3tqpqut" path="res://scenes/player/crowbar.png" id="2_uxqbo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_evlpq"]
+radius = 5.5327187
+height = 46.430225
+
+[node name="weapon" type="Node2D" unique_id=1546901814]
+script = ExtResource("1_6rka0")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1809936119]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1386875224]
+position = Vector2(0.9999993, 5.9999995)
+rotation = 1.0646509
+shape = SubResource("CapsuleShape2D_evlpq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=34854769]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_uxqbo")
+
+[node name="Timer" type="Timer" parent="." unique_id=754792154]
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
