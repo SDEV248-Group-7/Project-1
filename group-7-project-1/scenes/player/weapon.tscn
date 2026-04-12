@@ -3,20 +3,26 @@
 [ext_resource type="Script" uid="uid://c6uag8tc8rws7" path="res://scenes/player/weapon.gd" id="1_6rka0"]
 [ext_resource type="Texture2D" uid="uid://uvvmo3tqpqut" path="res://scenes/player/crowbar.png" id="2_uxqbo"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_evlpq"]
-radius = 5.5327187
-height = 46.430225
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rka0"]
+size = Vector2(30.225304, 20)
 
 [node name="weapon" type="Node2D" unique_id=1546901814]
+position = Vector2(25.000002, -6.000002)
+rotation = 0.5074437
 script = ExtResource("1_6rka0")
+metadata/_edit_group_ = true
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1809936119]
+position = Vector2(6.8904667, -16.417105)
+scale = Vector2(3.2361794, 2.7910128)
 monitoring = false
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1386875224]
-position = Vector2(0.9999993, 5.9999995)
-rotation = 1.0646509
-shape = SubResource("CapsuleShape2D_evlpq")
+position = Vector2(0.88289165, 5.788731)
+rotation = 1.0646508
+scale = Vector2(0.99999994, 0.9999999)
+shape = SubResource("RectangleShape2D_6rka0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=34854769]
 scale = Vector2(0.6, 0.6)

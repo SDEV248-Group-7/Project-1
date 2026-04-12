@@ -7,7 +7,10 @@ signal ghost_died(size : String);
 # Does damage to player if touched
 # dealth damage to it if hit by player
 
-@export var health : int = 100;
+@export var health : int = 1;
+@export var move_speed : int;
+
+@onready var player = get_node("../../Player");
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,3 +21,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(health <= 0):
 		ghost_died.emit("small");
+	
+	var direction = -(position.direction_to(player));
+	
+	position = direction * move_speed;
+
+
+func hurt():
+	health -= 1;

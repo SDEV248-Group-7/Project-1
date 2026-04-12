@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://m4vhjomicp0e"]
+
+[ext_resource type="Script" uid="uid://qj55f3pq78yg" path="res://scenes/UI/hud.gd" id="1_5fyfn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5fyfn"]
+
+[node name="Hud" type="CanvasLayer" unique_id=266180328]
+script = ExtResource("1_5fyfn")
+
+[node name="Lives" type="Label" parent="." unique_id=1921112910]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Lives: 3"
+label_settings = SubResource("LabelSettings_5fyfn")

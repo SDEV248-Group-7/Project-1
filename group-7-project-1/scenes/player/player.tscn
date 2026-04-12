@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bn8v5wid1sgt1" path="res://assets/player/left.png" id="3_p47bc"]
 [ext_resource type="Texture2D" uid="uid://buu17ovp4oxtm" path="res://assets/player/right.png" id="4_75vfm"]
 [ext_resource type="Texture2D" uid="uid://brdcom2bfgga1" path="res://assets/player/up.png" id="5_0owmy"]
+[ext_resource type="PackedScene" uid="uid://m4vhjomicp0e" path="res://scenes/UI/HUD.tscn" id="6_75vfm"]
+[ext_resource type="PackedScene" uid="uid://vqktikinltwm" path="res://scenes/player/weapon.tscn" id="7_0owmy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p47bc"]
 atlas = ExtResource("1_8afob")
@@ -147,3 +149,21 @@ animation = &"down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1003087963]
 position = Vector2(-4.75, -2)
 shape = SubResource("RectangleShape2D_dovo2")
+
+[node name="Hud" parent="." unique_id=266180328 instance=ExtResource("6_75vfm")]
+
+[node name="Left_Weapon" parent="." unique_id=1546901814 instance=ExtResource("7_0owmy")]
+position = Vector2(-46, 5.000002)
+rotation = -2.615867
+
+[node name="Up_Weapon" parent="." unique_id=2046874983 instance=ExtResource("7_0owmy")]
+position = Vector2(-14, -40.000004)
+rotation = -1.042218
+
+[node name="Down_Weapon" parent="." unique_id=1396552877 instance=ExtResource("7_0owmy")]
+position = Vector2(-1, 50)
+rotation = 2.1792028
+
+[node name="Right_Weapon" parent="." unique_id=1766564573 instance=ExtResource("7_0owmy")]
+
+[connection signal="life_changed" from="." to="Hud" method="_on_player_life_changed"]

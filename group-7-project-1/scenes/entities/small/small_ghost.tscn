@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkmq73h0x2hix"]
+[gd_scene format=3 uid="uid://bkmq73h0x2hix"]
 
 [ext_resource type="Script" uid="uid://cfg8q4epmf2ol" path="res://scenes/entities/small/small_ghost.gd" id="1_qsuqt"]
 
-[node name="small_ghost" type="RigidBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsuqt"]
+
+[node name="small_ghost" type="Area2D" unique_id=9062795 groups=["ghost"]]
 script = ExtResource("1_qsuqt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1573591362]
+shape = SubResource("RectangleShape2D_qsuqt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=33084403]

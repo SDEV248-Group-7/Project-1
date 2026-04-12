@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://h0ufqxfv75qg"]
+[gd_scene format=3 uid="uid://h0ufqxfv75qg"]
 
 [ext_resource type="Script" uid="uid://dbjnlgcl65mwe" path="res://scenes/entities/npc/npc.gd" id="1_av8t8"]
 
-[node name="NPC" type="StaticBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1806356501]
 script = ExtResource("1_av8t8")
+
+[node name="Timer" type="Timer" parent="." unique_id=1828281748]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
