@@ -291,3 +291,7 @@ script = ExtResource("1_wl0tb")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=578444684]
 
 [node name="Player" parent="." unique_id=849225519 instance=ExtResource("5_5w0xm")]
+
+[node name="Top_Spawn" type="Marker2D" parent="." unique_id=736382627]
+
+[node name="Bottom_Spawn" type="Marker2D" parent="." unique_id=775496117]
