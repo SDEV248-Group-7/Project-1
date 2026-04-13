@@ -40,9 +40,10 @@ func init(MAIN : Node, PLAYER : CharacterBody2D, ROOM : Node2D, dead_lg : int, d
 					entity.init(PLAYER, map_to_local(cell));
 					entity.connect("ghost_died", Callable(MAIN, "ghost_killed"));
 			"key" : 
-				entity = MAIN.key_scene.instantiate();
-				ROOM.add_child.call_deferred(entity);
-				entity.position = map_to_local(cell);
+				if !(PLAYER.key_held):
+					entity = MAIN.key_scene.instantiate();
+					ROOM.add_child.call_deferred(entity);
+					entity.position = map_to_local(cell);
 			"npc" : 
 				entity = MAIN.npc_scene.instantiate();
 				ROOM.add_child.call_deferred(entity);

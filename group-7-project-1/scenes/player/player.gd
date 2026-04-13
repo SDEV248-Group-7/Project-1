@@ -14,6 +14,8 @@ signal life_changed(new_life : int);
 
 @onready var key_held : bool = false;
 
+@onready var fine : bool = true;
+
 func _ready() -> void:
 	$Right_Weapon.hide();
 	$Left_Weapon.hide();
@@ -29,7 +31,9 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i);
 		if collision.get_collider().is_in_group("ghost"):
 			collision.get_collider().hurt();
-			hurt();
+			if(fine):
+				fine = false;
+				hurt();
 
 
 func handle_movement():
@@ -74,6 +78,8 @@ func hurt():
 	life_changed.emit(life);
 	if life <= 0:
 		gameover.emit("died");
+	
+	fine = true;
 
 
 func has_key():

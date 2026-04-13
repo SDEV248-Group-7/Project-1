@@ -14,6 +14,9 @@ extends Node
 @onready var key_scene : PackedScene = preload("res://scenes/entities/key/key.tscn");
 @onready var npc_scene : PackedScene = preload("res://scenes/entities/npc/npc.tscn");
 
+@onready var game_over_screen : PackedScene = preload("res://scenes/Story/game_over.tscn");
+@onready var success_sceen : PackedScene = preload("res://scenes/Story/Success.tscn");
+
 #region Room Handling
 @export var num_of_room : int = 3;
 var room_num : int = 1;
@@ -35,12 +38,12 @@ func _process(delta: float) -> void:
 
 ##This takes the current room and goes up one room.
 func go_up() -> void:
-	$Player.position = Vector2i.ZERO;
+	$Player.position = $Staging.position;
 	move = 1;
 
 ##This takes the current room and goes down one room.
 func go_down() -> void:
-	$Player.position = Vector2i.ZERO;
+	$Player.position = $Staging.position;
 	move = -1;
 
 ## This updates the room to the current room_num.
@@ -63,13 +66,6 @@ func update_room() -> void:
 			$Current_Room.get_child(0).queue_free(); # This should grab the room and clear it
 			$Current_Room.add_child.call_deferred(room); # This child should now be index #1
 			room.init(self, $Player, false, get_num_of_dead_lg(), get_num_of_dead_sm()); # go down
-	# changeroom_num;
-	#path = "res://scenes/rooms/room_%s.tscn" % room_num;
-	#var room_scene = load(path);
-	#var room : Node2D = room_scene.instantiate();
-	#$Current_Room.get_child(0).queue_free(); # This should grab the room and clear it
-	#$Current_Room.add_child.call_deferred(room); # This child should now be index #1
-	#room.init(self, $Player, false, get_num_of_dead_lg(), get_num_of_dead_sm()); # go down
 	
 	move = 0;
 #endregion
@@ -87,9 +83,9 @@ func ghost_killed(size : String):
 func game_over(reason : String):
 	match reason:
 		"died":
-			get_tree().change_scene_to_file("res://scenes/Story/Game_Over.tscn");
+			get_tree().change_scene_to_packed(game_over_screen);
 		"freed":
-			get_tree().change_scene_to_file("res://scenes/Story/Success.tscn");
+			get_tree().change_scene_to_packed(success_sceen);
 
 
 func get_num_of_dead_lg():
