@@ -36,7 +36,7 @@ func update_room(dif : int) -> void:
 		$Player.position = get_child(1).get_child(1).position;
 		return; # This is to exit early
 	get_child(1).queue_free(); # This should grab the room and clear it
-	add_child(room); # This child should now be index #1
+	add_child.call_deferred(room); # This child should now be index #1
 	if dif == -1:
 		$Player.position = get_child(1).get_child(0).position; # This is marker for top spawn point
 	elif dif == 1:

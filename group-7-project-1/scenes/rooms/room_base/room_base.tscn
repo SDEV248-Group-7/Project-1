@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://bq0kbnywujaa0" path="res://scenes/rooms/room_base/door_spawning.gd" id="3_qaw2j"]
 [ext_resource type="Texture2D" uid="uid://ygkgl2sqyyqo" path="res://assets/door/Bottom_Door_Sheet.png" id="3_spfjm"]
 [ext_resource type="Texture2D" uid="uid://b21y1bykjyk32" path="res://assets/door/Top_Door_Sheet.png" id="4_vnaw3"]
-[ext_resource type="PackedScene" uid="uid://c7d35t1mbc18d" path="res://scenes/player/player.tscn" id="5_5w0xm"]
 [ext_resource type="Texture2D" uid="uid://cn3b4ihuwtj4b" path="res://assets/door/door-closed.png" id="5_vnaw3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4r6m"]
@@ -106,5 +105,5 @@ script = ExtResource("3_qaw2j")
 script = ExtResource("1_wl0tb")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=578444684]
-
-[node name="Player" parent="." unique_id=849225519 instance=ExtResource("5_5w0xm")]
+position = Vector2(406, 416)
+zoom = Vector2(1.1, 1.1)
