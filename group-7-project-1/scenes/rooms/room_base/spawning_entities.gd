@@ -1,7 +1,7 @@
 extends TileMapLayer
 
 ## Top Main Tree
-@onready var MAIN : Node = get_parent().get_parent();
+@onready var MAIN : Node = get_parent().get_parent().get_parent();
 ## Current Room Tree
 @onready var ROOM : Node2D = get_parent();
 
@@ -21,6 +21,8 @@ func _ready() -> void:
 	var entity_cells : Array[Vector2i] = get_used_cells();
 	var small_ghost_num : int = 1;
 	var large_ghost_num : int = 1;
+	var killed_lg = MAIN.get_num_of_dead_lg();
+	var killed_sm = MAIN.get_num_of_dead_sm();
 	
 	for cell : Vector2i in entity_cells:
 		var data : TileData = get_cell_tile_data(cell);
@@ -29,17 +31,17 @@ func _ready() -> void:
 		
 		match type:
 			"small" :
-				if (small_ghost_num > MAIN.num_of_dead_sm) :
+				if (small_ghost_num > killed_sm) :
 					entity = small_ghost_scene.instantiate();
 					ROOM.add_child.call_deferred(entity);
 					entity.position = map_to_local(cell);
-					entity.ghost_died.connect(MAIN.ghost_killed);
+					entity.connect("ghost_died", Callable(MAIN, "ghost_killed"));
 			"large" : 
-				if (large_ghost_num > MAIN.num_of_dead_lg) :
+				if (large_ghost_num > killed_lg) :
 					entity = large_ghost_scene.instantiate();
 					ROOM.add_child.call_deferred(entity);
 					entity.position = map_to_local(cell);
-					entity.ghost_died.connect(MAIN.ghost_killed);
+					entity.connect("ghost_died", Callable(MAIN, "ghost_killed"));
 			"key" : 
 				entity = key_scene.instantiate();
 				ROOM.add_child.call_deferred(entity);

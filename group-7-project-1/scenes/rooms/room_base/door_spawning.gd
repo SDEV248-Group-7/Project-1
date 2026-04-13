@@ -2,7 +2,7 @@ extends TileMapLayer
 
 # This needs to load each door and handle their "body_entered" signals
 ##This is the primary control.
-@onready var MAIN : Node = get_parent().get_parent();
+@onready var MAIN : Node = get_parent().get_parent().get_parent();
 ##This is the current room.
 @onready var ROOM : Node2D = get_parent();
 @onready var door_scene : PackedScene = load("res://scenes/entities/door/door.tscn");

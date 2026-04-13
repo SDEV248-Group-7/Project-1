@@ -59,3 +59,10 @@ func game_over(reason : String):
 			get_tree().change_scene_to_file("res://scenes/Story/Game_Over.tscn");
 		"freed":
 			get_tree().change_scene_to_file("res://scenes/Story/Success.tscn");
+
+
+func get_num_of_dead_lg():
+	return num_of_dead_lg;
+
+func get_num_of_dead_sm():
+	return num_of_dead_sm;
