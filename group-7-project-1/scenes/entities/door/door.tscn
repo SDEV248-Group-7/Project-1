@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bvtposw8a2uey"]
+[gd_scene load_steps=4 format=3 uid="uid://bvtposw8a2uey"]
 
 [ext_resource type="Script" uid="uid://djlkepshqmxcf" path="res://scenes/entities/door/door.gd" id="1_npj28"]
 [ext_resource type="Texture2D" uid="uid://cn3b4ihuwtj4b" path="res://assets/door/door-closed.png" id="2_36w75"]
@@ -6,14 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36w75"]
 size = Vector2(64, 68)
 
-[node name="Door" type="Area2D" unique_id=750673952]
+[node name="Door" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_npj28")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1442729104]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_36w75")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=997452528]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_36w75")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

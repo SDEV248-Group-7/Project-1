@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bu58ciuj3dtw5"]
+[gd_scene load_steps=4 format=3 uid="uid://bu58ciuj3dtw5"]
 
 [ext_resource type="Script" uid="uid://4oggxna0kir6" path="res://scenes/entities/large/large_ghost.gd" id="1_0pqow"]
 [ext_resource type="Texture2D" uid="uid://cnetaupmfneqp" path="res://assets/Ghosts/big-ghost1.png" id="2_4co8s"]
@@ -6,13 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pqow"]
 size = Vector2(60, 62)
 
-[node name="Large_Ghost" type="CharacterBody2D" unique_id=1230267139 groups=["ghost"]]
+[node name="Large_Ghost" type="CharacterBody2D" groups=["ghost"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_0pqow")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=978342995]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0pqow")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1571796922]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_4co8s")

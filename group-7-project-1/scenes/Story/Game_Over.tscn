@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ugs0bju8wv2a"]
+[gd_scene load_steps=8 format=3 uid="uid://ugs0bju8wv2a"]
 
 [ext_resource type="Script" uid="uid://decbnpkydj5ho" path="res://scenes/Story/game_over.gd" id="1_1e4bw"]
 [ext_resource type="LabelSettings" uid="uid://dnrnthhennbjp" path="res://assets/Fonts/Titles.tres" id="2_3sx8n"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://kdtpcbtsocka" path="res://assets/Buttons/Back/Back_Base.png" id="4_3hy41"]
 [ext_resource type="Texture2D" uid="uid://b3v83xcymj4ea" path="res://assets/Buttons/Back/Back_Hover.png" id="5_jxkcg"]
 
-[node name="Game_Over" type="Control" unique_id=950488763]
+[node name="Game_Over" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,12 +17,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1e4bw")
 
-[node name="Background" type="TextureRect" parent="." unique_id=2045951261]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Title" type="Label" parent="." unique_id=2103409025]
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -35,7 +35,7 @@ grow_horizontal = 2
 text = "Game Over"
 label_settings = ExtResource("2_3sx8n")
 
-[node name="Story_Text" type="Label" parent="." unique_id=2008095513]
+[node name="Story_Text" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -51,7 +51,7 @@ grow_vertical = 2
 text = "\"Officer Down, I repeat, Officer Down!!!\""
 label_settings = ExtResource("3_3hy41")
 
-[node name="Retry" type="TextureButton" parent="." unique_id=1935852532]
+[node name="Retry" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -67,7 +67,7 @@ grow_vertical = 0
 texture_normal = ExtResource("2_t4g57")
 texture_hover = ExtResource("3_3sx8n")
 
-[node name="Back" type="TextureButton" parent="." unique_id=892375361]
+[node name="Back" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

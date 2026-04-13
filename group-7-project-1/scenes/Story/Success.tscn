@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dv3df4brmunil"]
+[gd_scene load_steps=8 format=3 uid="uid://dv3df4brmunil"]
 
 [ext_resource type="Script" uid="uid://2txnppc31nk1" path="res://scenes/Story/success.gd" id="1_rwo7g"]
 [ext_resource type="LabelSettings" uid="uid://dnrnthhennbjp" path="res://assets/Fonts/Titles.tres" id="2_obr4o"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://kdtpcbtsocka" path="res://assets/Buttons/Back/Back_Base.png" id="6_qsqkh"]
 [ext_resource type="Texture2D" uid="uid://b3v83xcymj4ea" path="res://assets/Buttons/Back/Back_Hover.png" id="7_8v8ci"]
 
-[node name="Success" type="Control" unique_id=1529375722]
+[node name="Success" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,12 +17,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rwo7g")
 
-[node name="Background" type="TextureRect" parent="." unique_id=786847246]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Title" type="Label" parent="." unique_id=629308445]
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -35,7 +35,7 @@ grow_horizontal = 2
 text = "Success!!!"
 label_settings = ExtResource("2_obr4o")
 
-[node name="Story_Text" type="Label" parent="." unique_id=794222622]
+[node name="Story_Text" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,7 +52,7 @@ text = "\"Officer reporting back, we are all good here.\"
 \"The civilian has been freed from their home.\""
 label_settings = ExtResource("3_0wy31")
 
-[node name="Retry" type="TextureButton" parent="." unique_id=709797871]
+[node name="Retry" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -68,7 +68,7 @@ grow_vertical = 0
 texture_normal = ExtResource("4_pw7s7")
 texture_hover = ExtResource("5_s4kgc")
 
-[node name="Back" type="TextureButton" parent="." unique_id=2022725291]
+[node name="Back" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ckhml5bh25qrs"]
+[gd_scene load_steps=6 format=3 uid="uid://ckhml5bh25qrs"]
 
 [ext_resource type="Script" uid="uid://bywpl2cf70pyr" path="res://scenes/Story/story_intro.gd" id="1_7rudh"]
 [ext_resource type="LabelSettings" uid="uid://dnrnthhennbjp" path="res://assets/Fonts/Titles.tres" id="2_d077y"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://df2jtbmwbmtey" path="res://assets/Buttons/Start/Start_base.png" id="4_0qhgq"]
 [ext_resource type="Texture2D" uid="uid://dolgl14jojwcs" path="res://assets/Buttons/Start/Start_Hover.png" id="5_t3n14"]
 
-[node name="StoryIntro" type="Control" unique_id=88599408]
+[node name="StoryIntro" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,12 +15,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7rudh")
 
-[node name="Background" type="TextureRect" parent="." unique_id=970158089]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Title" type="Label" parent="." unique_id=1067297665]
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -33,7 +33,7 @@ grow_horizontal = 2
 text = "The Story So Far..."
 label_settings = ExtResource("2_d077y")
 
-[node name="Story_Text" type="Label" parent="." unique_id=1713618415]
+[node name="Story_Text" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -51,7 +51,7 @@ Resident: \"Hello, yes, my house is haunted!! The ghosts trapped me upstairs I n
 Operator: \"Oh-kay? An officer is on their way.\""
 label_settings = ExtResource("3_0axl8")
 
-[node name="Start" type="TextureButton" parent="." unique_id=2096945520]
+[node name="Start" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
