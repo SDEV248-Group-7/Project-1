@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckhml5bh25qrs"]
+[gd_scene load_steps=7 format=3 uid="uid://ckhml5bh25qrs"]
 
 [ext_resource type="Script" uid="uid://bywpl2cf70pyr" path="res://scenes/Story/story_intro.gd" id="1_7rudh"]
+[ext_resource type="Texture2D" uid="uid://c17t32s5wsyre" path="res://assets/background.png" id="2_0axl8"]
 [ext_resource type="LabelSettings" uid="uid://dnrnthhennbjp" path="res://assets/Fonts/Titles.tres" id="2_d077y"]
 [ext_resource type="LabelSettings" uid="uid://bgvad6ouqbl" path="res://assets/Fonts/Body_Text.tres" id="3_0axl8"]
 [ext_resource type="Texture2D" uid="uid://df2jtbmwbmtey" path="res://assets/Buttons/Start/Start_base.png" id="4_0qhgq"]
@@ -17,8 +18,10 @@ script = ExtResource("1_7rudh")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1155.0
+offset_bottom = 650.0
+texture = ExtResource("2_0axl8")
+expand_mode = 2
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1

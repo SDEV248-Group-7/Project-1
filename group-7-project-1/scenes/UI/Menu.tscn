@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://5keipa3v0ovm"]
+[gd_scene load_steps=10 format=3 uid="uid://5keipa3v0ovm"]
 
 [ext_resource type="Script" uid="uid://d0xic2mul34oy" path="res://scenes/UI/menu.gd" id="1_rj1u7"]
+[ext_resource type="Texture2D" uid="uid://c17t32s5wsyre" path="res://assets/background.png" id="2_6pwqh"]
 [ext_resource type="Texture2D" uid="uid://df2jtbmwbmtey" path="res://assets/Buttons/Start/Start_base.png" id="2_6tsa7"]
 [ext_resource type="LabelSettings" uid="uid://dnrnthhennbjp" path="res://assets/Fonts/Titles.tres" id="2_6u5o2"]
 [ext_resource type="Texture2D" uid="uid://dolgl14jojwcs" path="res://assets/Buttons/Start/Start_Hover.png" id="3_6u5o2"]
@@ -9,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bva2kni7egm1b" path="res://assets/Buttons/Quit/Quit_Base.png" id="6_qlyo0"]
 [ext_resource type="Texture2D" uid="uid://b68hdbnbpavmk" path="res://assets/Buttons/Quit/Quit_Hover.png" id="7_y1mkv"]
 
-[node name="Menu" type="Control" unique_id=1080340062]
+[node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,12 +19,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rj1u7")
 
-[node name="Background" type="TextureRect" parent="." unique_id=1700548171]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1159.0
+offset_bottom = 647.0
+texture = ExtResource("2_6pwqh")
+expand_mode = 2
 
-[node name="Title" type="Label" parent="." unique_id=544098970]
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -36,7 +39,7 @@ grow_horizontal = 2
 text = "A Scare On Maple Street"
 label_settings = ExtResource("2_6u5o2")
 
-[node name="Start" type="TextureButton" parent="." unique_id=1577725231]
+[node name="Start" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,7 +55,7 @@ grow_vertical = 2
 texture_normal = ExtResource("2_6tsa7")
 texture_hover = ExtResource("3_6u5o2")
 
-[node name="Credits" type="TextureButton" parent="." unique_id=662726043]
+[node name="Credits" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -68,7 +71,7 @@ grow_vertical = 2
 texture_normal = ExtResource("4_6pwqh")
 texture_hover = ExtResource("5_l2dba")
 
-[node name="Quit" type="TextureButton" parent="." unique_id=611292638]
+[node name="Quit" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

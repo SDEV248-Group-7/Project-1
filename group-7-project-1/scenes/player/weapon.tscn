@@ -23,7 +23,6 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0.882892, 5.78873)
 rotation = 1.06465
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6rka0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
