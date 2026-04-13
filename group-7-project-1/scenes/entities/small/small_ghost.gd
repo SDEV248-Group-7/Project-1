@@ -7,8 +7,7 @@ signal ghost_died(size : String);
 # Does damage to player if touched
 # dealth damage to it if hit by player
 
-@export var health : int = 1;
-@export var move_speed : int;
+@export var move_speed : int = 0;
 
 @onready var player = get_node("../../../Player");
 
@@ -19,8 +18,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(health <= 0):
-		ghost_died.emit("small");
 	
 	var direction = -(position.direction_to(player.position));
 	
@@ -28,4 +25,5 @@ func _process(delta: float) -> void:
 
 
 func hurt():
-	health -= 1;
+	ghost_died.emit("small");
+	queue_free();

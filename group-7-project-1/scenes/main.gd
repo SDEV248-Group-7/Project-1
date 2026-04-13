@@ -19,37 +19,59 @@ extends Node
 var room_num : int = 1;
 var path : String = "res://scenes/rooms/room_%s.tscn" % room_num;
 
+var move : int = 0;
+
 func _ready() -> void:
-	$Player.position = Vector2i.ZERO;
-	update_room(0);
+	var room_scene = load(path);
+	var room : Node2D = room_scene.instantiate();
+	$Current_Room.add_child(room);
+	room.init(self, $Player, true, get_num_of_dead_lg(), get_num_of_dead_sm());
+
+
+func _process(delta: float) -> void:
+	if move != 0:
+		update_room()
+
 
 ##This takes the current room and goes up one room.
 func go_up() -> void:
 	$Player.position = Vector2i.ZERO;
-	update_room(1);
+	move = 1;
 
 ##This takes the current room and goes down one room.
 func go_down() -> void:
 	$Player.position = Vector2i.ZERO;
-	update_room(-1);
+	move = -1;
 
 ## This updates the room to the current room_num.
 ## dif is the difference in room number (1 for going up, -1 for going down).
-func update_room(dif : int) -> void:
-	room_num = dif + room_num;
-	path = "res://scenes/rooms/room_%s.tscn" % room_num;
-	var room_scene = load(path);
-	var room : Node2D = room_scene.instantiate();
-	if dif == 0: # This is for on first load.
-		$Current_Room.add_child(room);
-		room.init(self, $Player, false, get_num_of_dead_lg(), get_num_of_dead_sm());
-		return; # This is to exit early
-	$Current_Room.get_child(0).queue_free(); # This should grab the room and clear it
-	$Current_Room.add_child.call_deferred(room); # This child should now be index #1
-	if dif == -1:
-		room.init(self, $Player, true, get_num_of_dead_lg(), get_num_of_dead_sm());
-	elif dif == 1:
-		room.init(self, $Player, false, get_num_of_dead_lg(), get_num_of_dead_sm());
+func update_room() -> void:
+	match move:
+		1: #going up
+			room_num += 1;
+			path = "res://scenes/rooms/room_%s.tscn" % room_num;
+			var room_scene = load(path);
+			var room : Node2D = room_scene.instantiate();
+			$Current_Room.get_child(0).queue_free(); # This should grab the room and clear it
+			$Current_Room.add_child.call_deferred(room); # This child should now be index #1
+			room.init(self, $Player, true, get_num_of_dead_lg(), get_num_of_dead_sm()); # go up
+		-1: #going down
+			room_num -= 1;
+			path = "res://scenes/rooms/room_%s.tscn" % room_num;
+			var room_scene = load(path);
+			var room : Node2D = room_scene.instantiate();
+			$Current_Room.get_child(0).queue_free(); # This should grab the room and clear it
+			$Current_Room.add_child.call_deferred(room); # This child should now be index #1
+			room.init(self, $Player, false, get_num_of_dead_lg(), get_num_of_dead_sm()); # go down
+	# changeroom_num;
+	#path = "res://scenes/rooms/room_%s.tscn" % room_num;
+	#var room_scene = load(path);
+	#var room : Node2D = room_scene.instantiate();
+	#$Current_Room.get_child(0).queue_free(); # This should grab the room and clear it
+	#$Current_Room.add_child.call_deferred(room); # This child should now be index #1
+	#room.init(self, $Player, false, get_num_of_dead_lg(), get_num_of_dead_sm()); # go down
+	
+	move = 0;
 #endregion
 
 
