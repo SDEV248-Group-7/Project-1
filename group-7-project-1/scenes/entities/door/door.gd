@@ -30,16 +30,16 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if locked and body.has_key(): 
+	if not locked:
+		match direction:
+			"up": going_up.emit();
+			"down": going_down.emit();
+	elif locked and body.has_key(): 
 		locked = false;
 		$Sprite2D.texture = open;
 		await get_tree().create_timer(1).timeout;
 		match direction:
 			"up": going_up.emit();
 			"down": going_down.emit();
-	elif not locked:
-		match direction:
-			"up": going_up.emit();
-			"down": going_down.emit();
 	else:
-		pass
+		pass;

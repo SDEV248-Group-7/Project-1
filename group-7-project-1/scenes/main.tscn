@@ -6,6 +6,8 @@
 [node name="Main" type="Node" unique_id=1082911308]
 script = ExtResource("1_o5qli")
 
+[node name="Current_Room" type="Node" parent="." unique_id=1262006908]
+
 [node name="Player" parent="." unique_id=373259088 instance=ExtResource("2_0wfyh")]
 
 [connection signal="gameover" from="Player" to="." method="game_over"]

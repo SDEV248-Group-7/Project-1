@@ -32,15 +32,15 @@ func update_room(dif : int) -> void:
 	var room_scene = load(path);
 	var room : Node2D = room_scene.instantiate();
 	if dif == 0: # This is for on first load.
-		add_child(room);
-		$Player.position = get_child(1).get_child(1).position;
+		$Current_Room.add_child(room);
+		$Player.position = $Current_Room.get_child(0).get_child(1).position;
 		return; # This is to exit early
-	get_child(1).queue_free(); # This should grab the room and clear it
+	$Current_Room.get_child(0).queue_free(); # This should grab the room and clear it
 	add_child.call_deferred(room); # This child should now be index #1
 	if dif == -1:
-		$Player.position = get_child(1).get_child(0).position; # This is marker for top spawn point
+		$Player.position = $Current_Room.get_child(0).get_child(0).position; # This is marker for top spawn point
 	elif dif == 1:
-		$Player.position = get_child(1).get_child(1).position; # This is marker for bottom spawn point
+		$Player.position = $Current_Room.get_child(0).get_child(1).position; # This is marker for bottom spawn point
 #endregion
 
 

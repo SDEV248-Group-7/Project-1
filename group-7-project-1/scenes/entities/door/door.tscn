@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cn3b4ihuwtj4b" path="res://assets/door/door-closed.png" id="2_36w75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36w75"]
-size = Vector2(64, 66)
+size = Vector2(64, 68)
 
 [node name="Door" type="Area2D" unique_id=750673952]
 collision_layer = 2
