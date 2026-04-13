@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://crmaajcko7r63" path="res://assets/Ghosts/small-ghost-1.png" id="2_3s5ef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsuqt"]
-size = Vector2(56, 61)
+size = Vector2(60, 60)
 
-[node name="small_ghost" type="Area2D" unique_id=1474597404 groups=["ghost"]]
+[node name="Small_Ghost" type="CharacterBody2D" unique_id=617633206 groups=["ghost"]]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("1_mle7o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=270460786]
-position = Vector2(0, -0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=485877348]
+position = Vector2(2, -2)
 shape = SubResource("RectangleShape2D_qsuqt")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=777195806]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=615975944]
 texture = ExtResource("2_3s5ef")

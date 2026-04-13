@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func init(MAIN : Node, player : CharacterBody2D, top : bool, dead_lg : int, dead_sm : int) -> void:
-	$Entities.init(MAIN, self, dead_lg, dead_sm);
-	if top: player.position = $Bottom_Spawn.position;
-	else: player.position = $Top_Spawn.position;
+func init(MAIN : Node, PLAYER : CharacterBody2D, top : bool, dead_lg : int, dead_sm : int) -> void:
+	$Entities.init(MAIN, PLAYER, self, dead_lg, dead_sm);
+	if top: PLAYER.position = $Bottom_Spawn.position;
+	else: PLAYER.position = $Top_Spawn.position;

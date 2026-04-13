@@ -1,4 +1,4 @@
-extends Area2D;
+extends CharacterBody2D;
 
 signal ghost_died(size : String);
 
@@ -7,21 +7,22 @@ signal ghost_died(size : String);
 # Does damage to player if touched
 # dealth damage to it if hit by player
 
-@export var move_speed : int = 0;
+@export var move_speed : int = 1;
 
-@onready var player = get_node("../../../Player");
+@onready var PLAYER : CharacterBody2D;
+
+func init(_player : CharacterBody2D, _position : Vector2):
+	PLAYER = _player;
+	position = _position;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	
-	var direction = -(position.direction_to(player.position));
-	
-	position = direction * move_speed;
+func _physics_process(delta: float) -> void:
+	var direction = position.direction_to(PLAYER.direction);
+	velocity = direction * move_speed;
 
 
 func hurt():

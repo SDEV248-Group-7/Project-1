@@ -16,7 +16,7 @@ func _ready() -> void:
 	# large (Large Ghost)
 	# key
 	# npc (Resident)
-func init(MAIN : Node, ROOM : Node2D, dead_lg : int, dead_sm : int) -> void:
+func init(MAIN : Node, PLAYER : CharacterBody2D, ROOM : Node2D, dead_lg : int, dead_sm : int) -> void:
 	var entity_cells : Array[Vector2i] = get_used_cells();
 	var small_ghost_num : int = 1;
 	var large_ghost_num : int = 1;
@@ -31,13 +31,13 @@ func init(MAIN : Node, ROOM : Node2D, dead_lg : int, dead_sm : int) -> void:
 				if (small_ghost_num > dead_sm) :
 					entity = MAIN.small_ghost_scene.instantiate();
 					ROOM.add_child.call_deferred(entity);
-					entity.position = map_to_local(cell);
+					entity.init(PLAYER, map_to_local(cell));
 					entity.connect("ghost_died", Callable(MAIN, "ghost_killed"));
 			"large" : 
 				if (large_ghost_num > dead_sm) :
 					entity = MAIN.large_ghost_scene.instantiate();
 					ROOM.add_child.call_deferred(entity);
-					entity.position = map_to_local(cell);
+					entity.init(PLAYER, map_to_local(cell));
 					entity.connect("ghost_died", Callable(MAIN, "ghost_killed"));
 			"key" : 
 				entity = MAIN.key_scene.instantiate();
