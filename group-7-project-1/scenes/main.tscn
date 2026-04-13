@@ -7,3 +7,5 @@
 script = ExtResource("1_o5qli")
 
 [node name="Player" parent="." unique_id=373259088 instance=ExtResource("2_0wfyh")]
+
+[connection signal="gameover" from="Player" to="." method="game_over"]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cn3b4ihuwtj4b" path="res://assets/door/door-closed.png" id="2_36w75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36w75"]
-size = Vector2(64, 107)
+size = Vector2(64, 66)
 
 [node name="Door" type="Area2D" unique_id=750673952]
 collision_layer = 2
@@ -14,7 +14,6 @@ script = ExtResource("1_npj28")
 texture = ExtResource("2_36w75")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=997452528]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_36w75")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

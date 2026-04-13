@@ -1,12 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://h0ufqxfv75qg"]
+[gd_scene format=3 uid="uid://h0ufqxfv75qg"]
 
 [ext_resource type="Script" uid="uid://dbjnlgcl65mwe" path="res://scenes/entities/npc/npc.gd" id="1_av8t8"]
+[ext_resource type="Texture2D" uid="uid://cpv6e3m3nqpjy" path="res://assets/npc-man.png" id="2_p5uw1"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjnpb"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=5714387]
 script = ExtResource("1_av8t8")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1168638572]
 wait_time = 4.0
+one_shot = true
 autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2078748697]
+texture = ExtResource("2_p5uw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1051452841]
+shape = SubResource("RectangleShape2D_xjnpb")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

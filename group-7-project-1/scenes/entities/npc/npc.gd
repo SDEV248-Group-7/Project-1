@@ -6,10 +6,10 @@ signal gameover(reason : String);
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await get_tree().create_timer(1).timeout;
-	velocity.y = move_speed;
+	pass
 
 func _physics_process(delta: float) -> void:
+	velocity.y = move_speed;
 	move_and_slide();
 
 func _on_timer_timeout() -> void:

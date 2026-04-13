@@ -19,35 +19,37 @@ extends TileMapLayer
 	# npc (Resident)
 func _ready() -> void:
 	var entity_cells : Array[Vector2i] = get_used_cells();
-	var entity : Tree;
 	var small_ghost_num : int = 1;
 	var large_ghost_num : int = 1;
 	
 	for cell : Vector2i in entity_cells:
 		var data : TileData = get_cell_tile_data(cell);
 		var type : String = data.get_custom_data("type");
+		var entity;
 		
 		match type:
 			"small" :
 				if (small_ghost_num > MAIN.num_of_dead_sm) :
 					entity = small_ghost_scene.instantiate();
-					ROOM.add_child(entity);
+					ROOM.add_child.call_deferred(entity);
 					entity.position = map_to_local(cell);
 					entity.ghost_died.connect(MAIN.ghost_killed);
 			"large" : 
 				if (large_ghost_num > MAIN.num_of_dead_lg) :
 					entity = large_ghost_scene.instantiate();
-					ROOM.add_child(entity);
+					ROOM.add_child.call_deferred(entity);
 					entity.position = map_to_local(cell);
 					entity.ghost_died.connect(MAIN.ghost_killed);
 			"key" : 
 				entity = key_scene.instantiate();
-				ROOM.add_child(entity);
+				ROOM.add_child.call_deferred(entity);
 				entity.position = map_to_local(cell);
 			"npc" : 
 				entity = npc_scene.instantiate();
-				ROOM.add_child(entity);
+				ROOM.add_child.call_deferred(entity);
 				entity.position = map_to_local(cell);
+				entity.connect("gameover", Callable(MAIN, "game_over"));
 		
 	#Endfor
+	hide();
 #End _ready()
