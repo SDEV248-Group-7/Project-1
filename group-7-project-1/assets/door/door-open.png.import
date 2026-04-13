@@ -2,22 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpv6e3m3nqpjy"
-path="res://.godot/imported/npc-man.png-fa06e1471e42e9bbc647bee18fbc5587.ctex"
+uid="uid://dsikdq8xa6pyp"
+path="res://.godot/imported/door-open.png-97f0902bb58b11760eaec20759d86605.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://npc-man.png"
-dest_files=["res://.godot/imported/npc-man.png-fa06e1471e42e9bbc647bee18fbc5587.ctex"]
+source_file="res://assets/door/door-open.png"
+dest_files=["res://.godot/imported/door-open.png-97f0902bb58b11760eaec20759d86605.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

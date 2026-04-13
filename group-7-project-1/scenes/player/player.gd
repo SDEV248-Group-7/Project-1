@@ -11,6 +11,9 @@ signal gameover(reason : String);
 signal life_changed(new_life : int);
 
 @onready var anim = $AnimatedSprite2D
+
+@onready var key_held : bool = false;
+
 func _ready() -> void:
 	$Right_Weapon.hide();
 	$Left_Weapon.hide();
@@ -70,3 +73,7 @@ func hurt():
 	life_changed.emit(life);
 	if life <= 0:
 		gameover.emit("died");
+
+
+func has_key():
+	return key_held;

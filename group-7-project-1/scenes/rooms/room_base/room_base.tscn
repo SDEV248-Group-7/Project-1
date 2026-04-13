@@ -1,287 +1,104 @@
-[gd_scene format=3 uid="uid://dd6j8dbvlgdsk"]
+[gd_scene format=4 uid="uid://dd6j8dbvlgdsk"]
 
 [ext_resource type="Script" uid="uid://c6m1rxl17dxtf" path="res://scenes/rooms/room_base/room_base.gd" id="1_b47m5"]
 [ext_resource type="Script" uid="uid://dqqwfx316m74s" path="res://scenes/rooms/room_base/spawning_entities.gd" id="1_wl0tb"]
 [ext_resource type="Texture2D" uid="uid://dutpg6wyascn0" path="res://assets/tilesets/resize smaller Group project game tile set.png" id="2_5w0xm"]
 [ext_resource type="Script" uid="uid://bq0kbnywujaa0" path="res://scenes/rooms/room_base/door_spawning.gd" id="3_qaw2j"]
+[ext_resource type="Texture2D" uid="uid://ygkgl2sqyyqo" path="res://assets/door/Bottom_Door_Sheet.png" id="3_spfjm"]
+[ext_resource type="Texture2D" uid="uid://b21y1bykjyk32" path="res://assets/door/Top_Door_Sheet.png" id="4_vnaw3"]
 [ext_resource type="PackedScene" uid="uid://c7d35t1mbc18d" path="res://scenes/player/player.tscn" id="5_5w0xm"]
+[ext_resource type="Texture2D" uid="uid://cn3b4ihuwtj4b" path="res://assets/door/door-closed.png" id="5_vnaw3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4r6m"]
 texture = ExtResource("2_5w0xm")
+texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
 3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-12:0/0 = 0
-13:0/0 = 0
-14:0/0 = 0
-15:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.731415, -26.06979, 31.7314, -26.333118, 31.735405, 31.95837, -32.000088, 32.000084)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
 3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-11:1/0 = 0
-12:1/0 = 0
-13:1/0 = 0
-14:1/0 = 0
-15:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32.784744, -28.176437, 31.7314, -28.43977, 32.25807, 27.913109, -31.994751, 27.64978)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
 3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-12:2/0 = 0
-13:2/0 = 0
-14:2/0 = 0
-15:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
 0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-12:3/0 = 0
-15:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
 0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-10:4/0 = 0
-11:4/0 = 0
-12:4/0 = 0
-13:4/0 = 0
-14:4/0 = 0
-15:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-12:5/0 = 0
-13:5/0 = 0
-14:5/0 = 0
-15:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-10:6/0 = 0
-11:6/0 = 0
-12:6/0 = 0
-13:6/0 = 0
-14:6/0 = 0
-15:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-9:7/0 = 0
-10:7/0 = 0
-11:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-14:7/0 = 0
-15:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-10:8/0 = 0
-11:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-14:8/0 = 0
-15:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-11:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-3:10/0 = 0
-4:10/0 = 0
-5:10/0 = 0
-6:10/0 = 0
-7:10/0 = 0
-8:10/0 = 0
-9:10/0 = 0
-10:10/0 = 0
-11:10/0 = 0
-12:10/0 = 0
-13:10/0 = 0
-14:10/0 = 0
-15:10/0 = 0
-0:11/0 = 0
-1:11/0 = 0
-2:11/0 = 0
-3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-6:11/0 = 0
-7:11/0 = 0
-8:11/0 = 0
-9:11/0 = 0
-10:11/0 = 0
-11:11/0 = 0
-12:11/0 = 0
-13:11/0 = 0
-14:11/0 = 0
-15:11/0 = 0
-0:12/0 = 0
-1:12/0 = 0
-2:12/0 = 0
-3:12/0 = 0
-4:12/0 = 0
-5:12/0 = 0
-6:12/0 = 0
-7:12/0 = 0
-8:12/0 = 0
-9:12/0 = 0
-10:12/0 = 0
-11:12/0 = 0
-12:12/0 = 0
-13:12/0 = 0
-14:12/0 = 0
-15:12/0 = 0
-0:13/0 = 0
-1:13/0 = 0
-2:13/0 = 0
-3:13/0 = 0
-4:13/0 = 0
-5:13/0 = 0
-6:13/0 = 0
-7:13/0 = 0
-8:13/0 = 0
-9:13/0 = 0
-10:13/0 = 0
-11:13/0 = 0
-12:13/0 = 0
-13:13/0 = 0
-14:13/0 = 0
-15:13/0 = 0
-0:14/0 = 0
-1:14/0 = 0
-2:14/0 = 0
-3:14/0 = 0
-4:14/0 = 0
-5:14/0 = 0
-6:14/0 = 0
-7:14/0 = 0
-8:14/0 = 0
-9:14/0 = 0
-10:14/0 = 0
-11:14/0 = 0
-12:14/0 = 0
-13:14/0 = 0
-14:14/0 = 0
-15:14/0 = 0
-0:15/0 = 0
-1:15/0 = 0
-2:15/0 = 0
-3:15/0 = 0
-4:15/0 = 0
-5:15/0 = 0
-6:15/0 = 0
-7:15/0 = 0
-8:15/0 = 0
-9:15/0 = 0
-10:15/0 = 0
-11:15/0 = 0
-12:15/0 = 0
-13:15/0 = 0
-14:15/0 = 0
-15:15/0 = 0
-0:17/0 = 0
-1:17/0 = 0
-2:17/0 = 0
-3:17/0 = 0
-0:18/0 = 0
-1:18/0 = 0
-2:18/0 = 0
-3:18/0 = 0
-0:19/0 = 0
-1:19/0 = 0
-2:19/0 = 0
-3:19/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25.148132, -15.799873, 25.411453, -15.536537, 25.67479, 19.74984, -25.148132, 20.276505)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.884048, -32.255657, 31.884048, -31.95837, 31.735405, 31.95837, -32.000088, 32.000084)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.774857, -25.806458, 17.51152, -25.806458, 18.038177, 26.069786, -17.511536, 26.069786)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3hsfn"]
+texture = ExtResource("3_spfjm")
+separation = Vector2i(5, 0)
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_0 = "down"
+0:0/0/custom_data_1 = true
+1:0/0 = 0
+1:0/0/custom_data_0 = "down"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qceco"]
+texture = ExtResource("4_vnaw3")
+separation = Vector2i(5, 0)
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_0 = "up"
+0:0/0/custom_data_1 = true
+1:0/0 = 0
+1:0/0/custom_data_0 = "up"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bojcw"]
+texture = ExtResource("5_vnaw3")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_2 = true
 
 [sub_resource type="TileSet" id="TileSet_spfjm"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 5
+custom_data_layer_0/name = "direction"
+custom_data_layer_0/type = 4
+custom_data_layer_1/name = "locked"
+custom_data_layer_1/type = 1
+custom_data_layer_2/name = "front_door"
+custom_data_layer_2/type = 1
 sources/0 = SubResource("TileSetAtlasSource_y4r6m")
+sources/1 = SubResource("TileSetAtlasSource_3hsfn")
+sources/2 = SubResource("TileSetAtlasSource_qceco")
+sources/3 = SubResource("TileSetAtlasSource_bojcw")
 
 [node name="Room_Base" type="Node2D" unique_id=1407281834]
 script = ExtResource("1_b47m5")
 
+[node name="Top_Spawn" type="Marker2D" parent="." unique_id=736382627]
+position = Vector2(381, 237)
+
+[node name="Bottom_Spawn" type="Marker2D" parent="." unique_id=775496117]
+position = Vector2(386, 581)
+
 [node name="Environment" type="TileMapLayer" parent="." unique_id=750164143]
+tile_map_data = PackedByteArray("AAAAAAkAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAACAAcAAAAAAAAAAAABAAcAAAAAAAAAAAABAAYAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAJAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAFAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAADAAUAAAAAAAAAAAADAAQAAAAAAAAAAAACAAQAAAAAAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAABAAUAAAAAAAAAAAABAAQAAAAAAAAAAAD//woAAAABAAIAAAD//wkAAAABAAIAAAD//wgAAAABAAIAAAD//wcAAAABAAIAAAD//wYAAAABAAIAAAD//wUAAAABAAIAAAD//wQAAAABAAIAAAD//wMAAAABAAIAAAD//wIAAAABAAIAAAAAAAIAAAABAAIAAAABAAIAAAABAAIAAAACAAIAAAABAAIAAAADAAIAAAABAAIAAAAEAAIAAAABAAIAAAAFAAIAAgABAAAAAAAGAAIAAgABAAAAAAAHAAIAAAABAAIAAAAIAAIAAAABAAIAAAAJAAIAAAABAAIAAAAKAAIAAAABAAIAAAALAAIAAAABAAIAAAAMAAIAAAABAAIAAAAMAAMAAAABAAIAAAAMAAQAAAABAAIAAAAMAAUAAAABAAIAAAAMAAYAAAABAAIAAAAMAAcAAAABAAIAAAAMAAgAAAABAAIAAAAMAAkAAAABAAIAAAAMAAoAAAABAAIAAAALAAoAAAABAAIAAAAKAAoAAAABAAIAAAAJAAoAAAABAAIAAAAIAAoAAAABAAIAAAAHAAoAAAABAAIAAAAGAAoAAQABAAAAAAAFAAoAAQABAAAAAAAEAAoAAAABAAIAAAADAAoAAAABAAIAAAACAAoAAAABAAIAAAABAAoAAAABAAIAAAAAAAoAAAABAAIAAAA=")
 tile_set = SubResource("TileSet_spfjm")
 script = ExtResource("3_qaw2j")
 
@@ -291,7 +108,3 @@ script = ExtResource("1_wl0tb")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=578444684]
 
 [node name="Player" parent="." unique_id=849225519 instance=ExtResource("5_5w0xm")]
-
-[node name="Top_Spawn" type="Marker2D" parent="." unique_id=736382627]
-
-[node name="Bottom_Spawn" type="Marker2D" parent="." unique_id=775496117]

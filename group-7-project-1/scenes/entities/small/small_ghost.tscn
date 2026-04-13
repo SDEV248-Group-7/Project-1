@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bkmq73h0x2hix"]
+
+[ext_resource type="Script" uid="uid://cfg8q4epmf2ol" path="res://scenes/entities/small/small_ghost.gd" id="1_mle7o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsuqt"]
+
+[node name="small_ghost" type="Area2D" unique_id=1474597404 groups=["ghost"]]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_mle7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=270460786]
+shape = SubResource("RectangleShape2D_qsuqt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=777195806]

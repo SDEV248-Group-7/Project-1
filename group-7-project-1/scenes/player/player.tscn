@@ -150,8 +150,6 @@ animation = &"down"
 position = Vector2(-4.75, -2)
 shape = SubResource("RectangleShape2D_dovo2")
 
-[node name="Hud" parent="." unique_id=266180328 instance=ExtResource("6_75vfm")]
-
 [node name="Left_Weapon" parent="." unique_id=1546901814 instance=ExtResource("7_0owmy")]
 position = Vector2(-46, 5.000002)
 rotation = -2.615867
@@ -165,5 +163,7 @@ position = Vector2(-1, 50)
 rotation = 2.1792028
 
 [node name="Right_Weapon" parent="." unique_id=1766564573 instance=ExtResource("7_0owmy")]
+
+[node name="Hud" parent="." unique_id=266180328 instance=ExtResource("6_75vfm")]
 
 [connection signal="life_changed" from="." to="Hud" method="_on_player_life_changed"]

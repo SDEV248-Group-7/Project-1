@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w6235j7bjss7"
-path="res://.godot/imported/Retry_Hover.png-d6c700c403ba680119ac012a0f7bc785.ctex"
+uid="uid://crmaajcko7r63"
+path="res://.godot/imported/small-ghost-1.png-5cc4e024e2ffc9a9137ad0ac621a5b21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Buttons/Retry/Retry_Hover.png"
-dest_files=["res://.godot/imported/Retry_Hover.png-d6c700c403ba680119ac012a0f7bc785.ctex"]
+source_file="res://assets/Ghosts/small-ghost-1.png"
+dest_files=["res://.godot/imported/small-ghost-1.png-5cc4e024e2ffc9a9137ad0ac621a5b21.ctex"]
 
 [params]
 

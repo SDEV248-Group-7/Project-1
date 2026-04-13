@@ -14,8 +14,7 @@ var room_num : int = 1;
 var path : String = "res://scenes/rooms/room_%s.tscn" % room_num;
 
 func _ready() -> void:
-	var room : Tree = load(path).instantiate();
-	add_child(room);
+	update_room(0);
 
 ##This takes the current room and goes up one room.
 func go_up() -> void:
@@ -30,9 +29,18 @@ func go_down() -> void:
 func update_room(dif : int) -> void:
 	room_num += dif;
 	path = "res://scenes/rooms/room_%s.tscn" % room_num;
-	var room : Tree = load(path).instantiate();
+	var room_scene = load(path);
+	var room : Node2D = room_scene.instantiate();
+	if dif == 0: # This is for on first load.
+		add_child(room);
+		$Player.position = get_child(1).get_child(1).position;
+		return; # This is to exit early
 	get_child(1).queue_free(); # This should grab the room and clear it
 	add_child(room); # This child should now be index #1
+	if dif == -1:
+		$Player.position = get_child(1).get_child(0).position; # This is marker for top spawn point
+	elif dif == 1:
+		$Player.position = get_child(1).get_child(1).position; # This is marker for bottom spawn point
 #endregion
 
 

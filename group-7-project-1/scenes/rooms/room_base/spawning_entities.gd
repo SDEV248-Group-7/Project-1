@@ -1,9 +1,9 @@
 extends TileMapLayer
 
 ## Top Main Tree
-@onready var MAIN : Tree = get_parent().get_parent();
+@onready var MAIN : Node = get_parent().get_parent();
 ## Current Room Tree
-@onready var ROOM : Tree = get_parent();
+@onready var ROOM : Node2D = get_parent();
 
 # Prepared scenes for spawning
 @onready var small_ghost_scene : PackedScene = load("res://scenes/entities/small/small_ghost.tscn");

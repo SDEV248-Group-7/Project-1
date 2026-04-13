@@ -15,8 +15,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Group 7 Project 1"
-run/main_scene="uid://c7d35t1mbc18d"
-config/features=PackedStringArray("4.4", "Forward Plus")
+run/main_scene="uid://5keipa3v0ovm"
+config/features=PackedStringArray("4.6", "Forward Plus")
 
 [input]
 
@@ -55,7 +55,7 @@ attack={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Enviroment"
-2d_physics/layer_3="Enemies"
+2d_physics/layer_3="Enemies & Weapons"
 2d_physics/layer_4="NPCs & Keys"
 
 [rendering]
