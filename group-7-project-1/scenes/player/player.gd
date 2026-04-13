@@ -12,7 +12,7 @@ signal life_changed(new_life : int);
 
 @onready var anim = $AnimatedSprite2D
 
-@onready var key_held : bool = true;
+@onready var key_held : bool = false;
 
 func _ready() -> void:
 	$Right_Weapon.hide();

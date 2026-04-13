@@ -6,6 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjnpb"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=5714387]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_av8t8")
 
 [node name="Timer" type="Timer" parent="." unique_id=1168638572]

@@ -1,15 +1,14 @@
 extends TileMapLayer
 
 ## Top Main Tree
-@onready var MAIN : Node = get_parent().get_parent().get_parent();
+#@onready var MAIN : Node = get_parent().get_parent().get_parent();
 ## Current Room Tree
-@onready var ROOM : Node2D = get_parent();
+#@onready var ROOM : Node2D = get_parent();
 
-# Prepared scenes for spawning
-@onready var small_ghost_scene : PackedScene = load("res://scenes/entities/small/small_ghost.tscn");
-@onready var large_ghost_scene : PackedScene = load("res://scenes/entities/large/large_ghost.tscn");
-@onready var key_scene : PackedScene = load("res://scenes/entities/key/key.tscn");
-@onready var npc_scene : PackedScene = load("res://scenes/entities/npc/npc.tscn");
+
+func _ready() -> void:
+	pass
+#End _ready()
 
 # This ready function should spawn in each entity by type
 # Options are...
@@ -17,12 +16,10 @@ extends TileMapLayer
 	# large (Large Ghost)
 	# key
 	# npc (Resident)
-func _ready() -> void:
+func init(MAIN : Node, ROOM : Node2D, dead_lg : int, dead_sm : int) -> void:
 	var entity_cells : Array[Vector2i] = get_used_cells();
 	var small_ghost_num : int = 1;
 	var large_ghost_num : int = 1;
-	var killed_lg = MAIN.get_num_of_dead_lg();
-	var killed_sm = MAIN.get_num_of_dead_sm();
 	
 	for cell : Vector2i in entity_cells:
 		var data : TileData = get_cell_tile_data(cell);
@@ -31,27 +28,27 @@ func _ready() -> void:
 		
 		match type:
 			"small" :
-				if (small_ghost_num > killed_sm) :
-					entity = small_ghost_scene.instantiate();
+				if (small_ghost_num > dead_sm) :
+					entity = MAIN.small_ghost_scene.instantiate();
 					ROOM.add_child.call_deferred(entity);
 					entity.position = map_to_local(cell);
 					entity.connect("ghost_died", Callable(MAIN, "ghost_killed"));
 			"large" : 
-				if (large_ghost_num > killed_lg) :
-					entity = large_ghost_scene.instantiate();
+				if (large_ghost_num > dead_sm) :
+					entity = MAIN.large_ghost_scene.instantiate();
 					ROOM.add_child.call_deferred(entity);
 					entity.position = map_to_local(cell);
 					entity.connect("ghost_died", Callable(MAIN, "ghost_killed"));
 			"key" : 
-				entity = key_scene.instantiate();
+				entity = MAIN.key_scene.instantiate();
 				ROOM.add_child.call_deferred(entity);
 				entity.position = map_to_local(cell);
 			"npc" : 
-				entity = npc_scene.instantiate();
+				entity = MAIN.npc_scene.instantiate();
 				ROOM.add_child.call_deferred(entity);
 				entity.position = map_to_local(cell);
 				entity.connect("gameover", Callable(MAIN, "game_over"));
 		
 	#Endfor
 	hide();
-#End _ready()
+#End of init()

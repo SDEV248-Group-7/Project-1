@@ -14,12 +14,12 @@ func _ready() -> void:
 	for cell : Vector2i in door_cells:
 		var door : Area2D = door_scene.instantiate();
 		var data : TileData = get_cell_tile_data(cell);
-		if (data.get_custom_data("front_door")): break;
-		var direction : String = data.get_custom_data("direction");
-		var locked : bool = data.get_custom_data("locked");
-		ROOM.add_child.call_deferred(door);
-		door.init(direction, map_to_local(cell), locked);
-		match direction:
-			"up": door.connect("going_up", Callable(MAIN, "go_up"));
-			"down": door.connect("going_down", Callable(MAIN, "go_down"));
+		if data.get_custom_data("door") : 
+			var direction : String = data.get_custom_data("direction");
+			var locked : bool = data.get_custom_data("locked");
+			ROOM.add_child.call_deferred(door);
+			door.init(direction, map_to_local(cell), locked);
+			match direction:
+				"up": door.connect("going_up", Callable(MAIN, "go_up"));
+				"down": door.connect("going_down", Callable(MAIN, "go_down"));
 	#endFor
