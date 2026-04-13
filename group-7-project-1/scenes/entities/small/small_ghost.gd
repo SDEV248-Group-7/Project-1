@@ -7,7 +7,7 @@ signal ghost_died(size : String);
 # Does damage to player if touched
 # dealth damage to it if hit by player
 
-@export var move_speed : int = 1;
+@export var move_speed : int = 100;
 
 @onready var PLAYER : CharacterBody2D;
 
@@ -21,8 +21,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	var direction = position.direction_to(PLAYER.direction);
+	var direction = -(position.direction_to(PLAYER.position));
 	velocity = direction * move_speed;
+	move_and_slide();
 
 
 func hurt():

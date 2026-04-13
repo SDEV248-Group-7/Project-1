@@ -10,4 +10,7 @@ script = ExtResource("1_o5qli")
 
 [node name="Player" parent="." unique_id=373259088 instance=ExtResource("2_0wfyh")]
 
+[node name="Staging" type="Marker2D" parent="." unique_id=140198453]
+position = Vector2(1550, 836)
+
 [connection signal="gameover" from="Player" to="." method="game_over"]
